@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private void calcular() {
         if (etanolEditText.getText().toString().isEmpty() || gasEditText.getText().toString().isEmpty()){
-            Toast.makeText(this, "Informe o valor dos dois combustiveis", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, getResources().getText(R.string.input_vazio), Toast.LENGTH_SHORT).show();
         }
         else {
             double gas = recuperarValor(gasEditText);
@@ -70,7 +70,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         try {
             value = Double.valueOf(input.getText().toString());
         }catch (NumberFormatException nfe){
-            Toast.makeText(this, "Valor inválido", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, getResources().getText(R.string.input_invalido), Toast.LENGTH_SHORT).show();
             value = 0;
         }
         return value;
